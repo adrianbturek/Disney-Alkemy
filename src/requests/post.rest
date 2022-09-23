@@ -1,0 +1,10 @@
+POST http://localhost:3000/
+Content-Type: application/json
+
+{   "id":3,
+    "titulo", "Cars",
+    "fechacreacion": "2006-03-03",
+    "calificacion": 15,
+    "idgenero": 5,
+    "imagen": ""
+}
