@@ -4,12 +4,13 @@ const router=express.Router();
 
 import PersonajesServices from '../Services/Personajes-Services.js';
 const personajesServices = new PersonajesServices();
+import verifytoken from '../routes/verifytoken.js'
 
 //**********************
 //PERSONAJES - CONSULTAS
 //**********************
 
-router.get("" , async (req,res) => {
+router.get("" , verifytoken,async (req,res) => {
     console.log('Estoy en Personajes Get');
 
     var personajes = null;
@@ -52,7 +53,7 @@ router.get("" , async (req,res) => {
 
 // CHALLENGE - 4
 
-router.post('' , async (req,res) => {
+router.post('' , verifytoken,async (req,res) => {
     console.log('Estoy en Personajes Insert');
     
     var personajes = await personajesServices.insert(req.body);
@@ -68,7 +69,7 @@ router.post('' , async (req,res) => {
 
 // CHALLENGE - 4
 
-router.put('' , async (req,res) => {
+router.put('' , verifytoken,async (req,res) => {
     console.log('Estoy en Personajes Update');
     
     var personajes = await personajesServices.update(req.body);
@@ -85,7 +86,7 @@ router.put('' , async (req,res) => {
 
 // CHALLENGE - 4
 
-router.delete('' , async (req,res) => {
+router.delete('' , verifytoken,async (req,res) => {
     console.log('Estoy en Personajes Delete');
     
     var personajes = await personajesServices.delete(req.body.id);

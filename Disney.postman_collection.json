@@ -7,24 +7,215 @@
 	},
 	"item": [
 		{
-			"name": "Peliculas GET TODOS",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "Peliculas GET x Titulo",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": [
+			"name": "Peliculas",
+			"item": [
+				{
+					"name": "Peliculas GET TODOS",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
 				{
 					"name": "Peliculas GET x Titulo",
-					"originalRequest": {
+					"request": {
 						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Peliculas GET x Genero",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Peliculas GET x Orden",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Peliculas GET x Detalle",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Pelicula POST",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/characters",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"characters"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pelicula PUT",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Pelicula DELETE",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Pelicula DELETE X ID",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Personajes",
+			"item": [
+				{
+					"name": "Personajes GET TODOS",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Personajes GET x Nombre",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Personajes GET x Edad",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Personajes GET x Pelicula",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Personajes GET DETALLE CON PELIS",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Personaje POST",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Personajes PUT",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Personajes DELETE",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login signup",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Login me",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Login signin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var res=pm.response.json()",
+									"pm.environment.set('token',res.token)",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -34,222 +225,24 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "{\"mail\":\"adrianbturek@gmail.com\",\n\"password\":\"Abtpsb22\"}"
 						},
 						"url": {
-							"raw": "http://localhost:3000/movies?titulo=volver%20al%20futuro",
+							"raw": "http://localhost:3000/auth/signin",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
-								"movies"
-							],
-							"query": [
-								{
-									"key": "titulo",
-									"value": "volver%20al%20futuro"
-								}
+								"auth",
+								"signin"
 							]
 						}
 					},
-					"status": "Unauthorized",
-					"code": 401,
-					"_postman_previewlanguage": "html",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Security-Policy",
-							"value": "default-src 'none'"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "Content-Type",
-							"value": "text/html; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "1698"
-						},
-						{
-							"key": "Date",
-							"value": "Tue, 13 Sep 2022 22:10:25 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "<!DOCTYPE html>\n<html lang=\"en\">\n    <head>\n        <meta charset=\"utf-8\">\n        <title>Error</title>\n    </head>\n    <body>\n        <pre>TypeError: res.status(...).JSON is not a function\n            <br> &nbsp; &nbsp;at verifytoken (file:///Users/adrianturek/Google%20Drive%20Adrian/JavaScript/Disney%203%20Sequelize/src/routes/verifytoken.js:10:32)\n            <br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/Users/adrianturek/Google Drive Adrian/JavaScript/Disney 3 Sequelize/node_modules/express/lib/router/layer.js:95:5)\n            <br> &nbsp; &nbsp;at trim_prefix (/Users/adrianturek/Google Drive Adrian/JavaScript/Disney 3 Sequelize/node_modules/express/lib/router/index.js:328:13)\n            <br> &nbsp; &nbsp;at /Users/adrianturek/Google Drive Adrian/JavaScript/Disney 3 Sequelize/node_modules/express/lib/router/index.js:286:9\n            <br> &nbsp; &nbsp;at Function.process_params (/Users/adrianturek/Google Drive Adrian/JavaScript/Disney 3 Sequelize/node_modules/express/lib/router/index.js:346:12)\n            <br> &nbsp; &nbsp;at next (/Users/adrianturek/Google Drive Adrian/JavaScript/Disney 3 Sequelize/node_modules/express/lib/router/index.js:280:10)\n            <br> &nbsp; &nbsp;at jsonParser (/Users/adrianturek/Google Drive Adrian/JavaScript/Disney 3 Sequelize/node_modules/body-parser/lib/types/json.js:110:7)\n            <br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/Users/adrianturek/Google Drive Adrian/JavaScript/Disney 3 Sequelize/node_modules/express/lib/router/layer.js:95:5)\n            <br> &nbsp; &nbsp;at trim_prefix (/Users/adrianturek/Google Drive Adrian/JavaScript/Disney 3 Sequelize/node_modules/express/lib/router/index.js:328:13)\n            <br> &nbsp; &nbsp;at /Users/adrianturek/Google Drive Adrian/JavaScript/Disney 3 Sequelize/node_modules/express/lib/router/index.js:286:9\n        </pre>\n    </body>\n</html>"
+					"response": []
 				}
 			]
-		},
-		{
-			"name": "Peliculas GET x Genero",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "Peliculas GET x Orden",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "Peliculas GET x Detalle",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "Pelicula POST",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/characters",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"characters"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Pelicula PUT",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "Pelicula DELETE",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "Pelicula DELETE X ID",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "Personajes GET TODOS",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "Personajes GET x Nombre",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "Personajes GET x Edad",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "Personajes GET x Pelicula",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "Personaje DETALLE CON PELIS",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "Personaje POST",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "Personajes PUT",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "Personajes DELETE",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "Login signup",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "Login me",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "Login signin",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
 		},
 		{
 			"name": "Public",

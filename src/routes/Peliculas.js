@@ -73,7 +73,7 @@ router.get('',verifytoken,async (req, res) => {
 
 // CHALLENGE - 9
 
-router.post('' , async (req,res) => {
+router.post('' , verifytoken,async (req,res) => {
     console.log('Estoy en Peliculas Insert');
     
     var peliculas = await peliculasServices.insert(req.body);
@@ -90,7 +90,7 @@ router.post('' , async (req,res) => {
 
 // CHALLENGE - 9
 
-router.put('' , async (req,res) => {
+router.put('' , verifytoken,async (req,res) => {
     console.log('Estoy en Peliculas Update');
     
     var peliculas = await peliculasServices.update(req.body);
@@ -106,7 +106,7 @@ router.put('' , async (req,res) => {
 
 // CHALLENGE - 9
 
-router.delete('' , async (req,res) => {
+router.delete('' , verifytoken,async (req,res) => {
     console.log('Estoy en Peliculas Delete');
     
     var peliculas = await peliculasServices.delete(req.body.id);
@@ -122,7 +122,7 @@ router.delete('' , async (req,res) => {
 
 // CHALLENGE - 9
 
-router.delete("/:id" , async (req,res) => {
+router.delete("/:id" , verifytoken,async (req,res) => {
     console.log('Estoy en Peliculas Delete x Id');
     const {id}= req.params; // esta es otra manera queresmos el id que viene de parametro
     console.log(id);
