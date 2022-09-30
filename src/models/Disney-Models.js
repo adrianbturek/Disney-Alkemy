@@ -2,7 +2,7 @@ import {DataTypes} from "sequelize";
 import {sequelize} from '../../dbconfig.js';
 
 const peliculasmodel = sequelize.define('peliculas',{
-    "titulo": {type: DataTypes.STRING},
+     "titulo": {type: DataTypes.STRING},
     "fecha_creacion": {type: DataTypes.DATE},
     "calificacion": {type: DataTypes.INTEGER},
     "idgenero": {type: DataTypes.INTEGER},
